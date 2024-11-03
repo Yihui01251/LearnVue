@@ -1,0 +1,32 @@
+<!-- CH1.2.3 定義狀態與網頁模板的映射關係 -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    <h1>CH1-1.3</h1>
+    歡迎使用 {{message}}!
+
+    <hr>
+    <h3>模板映射</h3>
+    單價: {{price}} 元
+    數量: {{quantity}} 個
+    總金額: {{price*quantity}}元
+    <hr>
+
+
+
+</div>
+
+<script>
+    const vm = Vue.createApp({
+        data() {
+            return {
+                message: 'Vue3.0',
+                price:100,
+                quantity:10
+            }
+        },
+    });
+    vm.mount('#app');
+
+  
+</script>

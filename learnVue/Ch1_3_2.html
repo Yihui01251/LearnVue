@@ -1,0 +1,42 @@
+<!-- CH1.3.2 computed計算屬性-->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    <section>
+      methods
+        <p>總金額共:{{subtotalMethods()}}元</p>
+        <p>總金額共:{{subtotalMethods()}}元</p>
+        <p>總金額共:{{subtotalMethods()}}元</p>
+    </section>
+
+    <section>
+      computed
+        <p>總金額共:{{subtotalComputed}}元</p>
+        <p>總金額共:{{subtotalComputed}}元</p>
+        <p>總金額共:{{subtotalComputed}}元</p>
+    </section>
+</div>
+
+<script>
+  const vm = Vue.createApp({
+    data() {
+      return {
+        price: 100,
+        quantity: 10,
+      };
+    },
+    //methods vs. computed
+    methods: {
+      subtotalMethods: function () {
+        console.log('methods');
+        return this.price * this.quantity;
+      },
+    },
+    computed: {
+      subtotalComputed: function () {
+        console.log('computed');
+        return this.price * this.quantity;
+      },
+    },
+  }).mount("#app");
+</script>
