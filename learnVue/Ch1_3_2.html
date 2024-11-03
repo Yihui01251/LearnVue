@@ -2,19 +2,19 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
-    <section>
-      methods
-        <p>總金額共:{{subtotalMethods()}}元</p>
-        <p>總金額共:{{subtotalMethods()}}元</p>
-        <p>總金額共:{{subtotalMethods()}}元</p>
-    </section>
+  <section>
+    methods
+    <p>總金額共:{{subtotalMethods()}}元</p>
+    <p>總金額共:{{subtotalMethods()}}元</p>
+    <p>總金額共:{{subtotalMethods()}}元</p>
+  </section>
 
-    <section>
-      computed
-        <p>總金額共:{{subtotalComputed}}元</p>
-        <p>總金額共:{{subtotalComputed}}元</p>
-        <p>總金額共:{{subtotalComputed}}元</p>
-    </section>
+  <section>
+    computed
+    <p>總金額共:{{subtotalComputed}}元</p>
+    <p>總金額共:{{subtotalComputed}}元</p>
+    <p>總金額共:{{subtotalComputed}}元</p>
+  </section>
 </div>
 
 <script>
@@ -28,13 +28,13 @@
     //methods vs. computed
     methods: {
       subtotalMethods: function () {
-        console.log('methods');
+        console.log("methods");
         return this.price * this.quantity;
       },
     },
     computed: {
       subtotalComputed: function () {
-        console.log('computed');
+        console.log("computed");
         return this.price * this.quantity;
       },
     },

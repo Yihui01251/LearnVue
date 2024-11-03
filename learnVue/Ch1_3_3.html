@@ -2,10 +2,10 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
-    <h1>幣值轉換</h1>
-    <div>台幣 <input type="text" v-model = "twd" ></div>
-    <div>日幣 <input type="text" v-model = "jpy" ></div>
-    <div>美金 <input type="text" v-model = "usd" ></div>
+  <h1>幣值轉換</h1>
+  <div>台幣 <input type="text" v-model="twd" /></div>
+  <div>日幣 <input type="text" v-model="jpy" /></div>
+  <div>美金 <input type="text" v-model="usd" /></div>
 </div>
 
 <script>
@@ -38,27 +38,27 @@
       };
     },
     //computed 加工
-    computed:{
+    computed: {
       //日幣
-      jpy:{
-        //當jpy被訪問時，get會被觸發，返回相應日幣值 
-        get(){
-          return Number.parseFloat(Number(this.twd)/0.278).toFixed(3);
+      jpy: {
+        //當jpy被訪問時，get會被觸發，返回相應日幣值
+        get() {
+          return Number.parseFloat(Number(this.twd) / 0.278).toFixed(3);
         },
         //當jpy值被改變時，set會被觸發，更新this.twd的值
-        set(val){
-          this.twd = Number.parseFloat(Number(val)*0.278).toFixed(3);
-        }
+        set(val) {
+          this.twd = Number.parseFloat(Number(val) * 0.278).toFixed(3);
+        },
       },
       //美金
-      usd:{
-        get(){
-          return Number.parseFloat(Number(this.twd)/28.540).toFixed(3);
+      usd: {
+        get() {
+          return Number.parseFloat(Number(this.twd) / 28.54).toFixed(3);
         },
-        set(val){
-          this.twd = Number.parseFloat(Number(val)*28.540).toFixed(3);
-        }
-      }
-    }
+        set(val) {
+          this.twd = Number.parseFloat(Number(val) * 28.54).toFixed(3);
+        },
+      },
+    },
   }).mount("#app");
 </script>

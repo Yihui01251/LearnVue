@@ -2,31 +2,31 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
-    <h1>data共用</h1>
-    <div id="data-1">
-        {{name}}
-        <input type="text" v-model="name">
-    </div >
-    <div id="data-2">
-        {{name}}
-        <input type="text" v-model="name">
-    </div >
+  <h1>data共用</h1>
+  <div id="data-1">
+    {{name}}
+    <input type="text" v-model="name" />
+  </div>
+  <div id="data-2">
+    {{name}}
+    <input type="text" v-model="name" />
+  </div>
 </div>
 
 <script>
-   const dataObj = { name: 'Zoe' };
-    const vm2 = Vue.createApp({
-        data() {
-            return {
-               ...dataObj
-            }
-        }
-    }).mount('#data-1');
-    const vm3 = Vue.createApp({
-        data() {
-            return {
-               ...dataObj
-            }
-        }
-    }).mount('#data-2');
+  const dataObj = { name: "Zoe" };
+  const vm2 = Vue.createApp({
+    data() {
+      return {
+        ...dataObj,
+      };
+    },
+  }).mount("#data-1");
+  const vm3 = Vue.createApp({
+    data() {
+      return {
+        ...dataObj,
+      };
+    },
+  }).mount("#data-2");
 </script>
