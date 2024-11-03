@@ -1,0 +1,65 @@
+<!-- CH1.4.2 v-model  -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+  <h1>v-model 雙向綁定</h1>
+  <form action="">
+    <h2>Input文字框</h2>
+    <input v-model="message" placeholder="edit me" />
+    <p>表單名稱:{{ message }}</p>
+    <hr />
+    <h2>textarea文字方塊</h2>
+    <p><span>Multiline message is:</span>{{ textareaMsg }}</p>
+    <textarea v-model="textareaMsg" placeholder="add"></textarea>
+    <hr />
+    <h2>radio/checkbox選擇框</h2>
+    <h3>radio單選</h3>
+    <div>
+      <input type="radio" id="one" value="1" v-model="picked" />
+      <label for="one">One</label>
+    </div>
+    <div>
+      <input type="radio" id="two" value="2" v-model="picked" />
+      <label for="two">Two</label>
+    </div>
+    <span>Picked:{{ picked }}</span>
+    <h3>checkbox複選</h3>
+    <input type="checkbox" id="c#" value="c#" v-model="checkLanguage" />
+    <label for="c#">C#</label>
+    <input type="checkbox" id="js" value="js" v-model="checkLanguage" />
+    <label for="js">javaScripts</label>
+    <input type="checkbox" id="Ts" value="Ts" v-model="checkLanguage" />
+    <label for="Ts">TypeScript</label>
+    <input type="checkbox" id="css" value="css" v-model="checkLanguage" />
+    <label for="css">css</label>
+    <br />
+    <p>Checked Language: {{ checkLanguage }}</p>
+    <h3>checkbox單選</h3>
+    <input type="checkbox" id="join" v-model="isChecked" />
+    <label for="join">Status: {{ isChecked }}</label>
+    <h3>select</h3>
+    <select v-model="selected">
+      <option disabled value="">請選擇</option>
+      <option value="萬華區">萬華區</option>
+      <option value="中山區">中山區</option>
+      <option value="中正區">中正區</option>
+    </select>
+    <p>Selected:{{selected || '未選擇'}}</p>
+    <hr />
+  </form>
+</div>
+
+<script>
+  const vm = Vue.createApp({
+    data() {
+      return {
+        message: "練習",
+        textareaMsg: "",
+        picked: 1,
+        checkLanguage: [],
+        isChecked: false,
+        selected:""
+      };
+    },
+  }).mount("#app");
+</script>
