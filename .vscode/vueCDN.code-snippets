@@ -1,0 +1,22 @@
+{
+		"Print to console": {
+			"prefix": "vueCDN",
+			"body": [
+				"<!-- CH..  -->",
+				"<script src=\"https://unpkg.com/vue@3/dist/vue.global.js\"></script>",
+				"",
+				"<div id=\"app\"></div>",
+				"",
+				"<script>",
+				"  const vm = Vue.createApp({",
+				"    data() {",
+				"      return {",
+				"        ",
+				"      };",
+				"    },",
+				"  }).mount(\"#app\");",
+				"</script>"
+			],
+			"description": "用作練習的Vue模板"
+		}
+}
