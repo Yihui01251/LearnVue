@@ -1,0 +1,52 @@
+<!-- CH1.3.4 Filters(Vue 2.x)-->
+<!-- Filters在vue3.0已被移除 -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+  <h1>首字轉為大寫字母</h1>
+  <p>{{message}}</p>
+  <p>=> {{message | capitalize }}</p>
+  p.s.會將"|"符號前的值當作參數引入
+
+  <p>{{msg3o0}}</p>
+  <p>{{capitalize3o0(msg3o0)}}</p>
+
+</div>
+
+<script>
+  //Vue2.x 才可以這樣寫
+  const vm = new Vue({
+    data() {
+      message: "hello";
+    },
+    //Filters
+    filters: {
+      //傳入字串的首字轉為大寫字母後回傳
+      capitalize: (value) => {
+        if (!value) {
+          return "";
+        }
+        value = value.toString();
+        return value, charAt(0).toUpperCase() + value.slice(1);
+      },
+    },
+  }).$mount("#app");
+
+  //Vue3.0用methods改寫
+  const app = Vue.createApp({
+    data(){
+      return{
+        msg3o0:'hello'
+      }
+    },
+    methods: {
+      capitalize3o0(value){
+        if (!value) {
+          return "";
+        }
+        value = value.toString();
+        return value, charAt(0).toUpperCase() + value.slice(1);
+      }
+    },
+  }).mount('#app');
+</script>
