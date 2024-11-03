@@ -1,0 +1,20 @@
+<!-- CH1.4.1 v-bind  -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+  <h1 v-bind:id="customId">v-bind</h1>
+
+  <button v-bind:disabled="isBtnDisabled">Click Me!</button>
+  "v-bind:disabled" 禁用狀態 => 可簡寫成 " :disabled "
+</div>
+
+<script>
+  const vm = Vue.createApp({
+    data() {
+      return {
+        customId: "title-id-1",
+        isBtnDisabled: "true",
+      };
+    },
+  }).mount("#app");
+</script>
